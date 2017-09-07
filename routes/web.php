@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/employee', 'DemoController@getEmployee');
+Route::post('/bank/create-2', 'ReportController@createStep2');
+Route::get('/report', 'ReportController@index');
 
 
 Auth::routes();
