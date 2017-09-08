@@ -12,6 +12,6 @@ class Bank extends Model
 
     public function details()
     {
-        return $this->hasMany('App\Models\BankDetails', 'finance_bank_id');
+        return $this->hasMany('App\Models\BankDetail', 'finance_bank_id');
     }
 }

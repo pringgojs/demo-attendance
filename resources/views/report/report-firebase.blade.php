@@ -13,7 +13,7 @@
                 <div class="panel-heading">
                 	Report
                 </div>
-                <form action="{{url('bank/create-2')}}" method="post">
+                <form action="{{url('bank/create-step-2')}}" method="post">
             	{!! csrf_field() !!}
                 <div class="panel-body">
 	                <table class="table table-bordered table-striped">

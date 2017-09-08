@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/bank/{id}', 'ReportController@show');
 Route::post('/bank/save', 'ReportController@store');
 Route::post('/bank/create-step-2', 'ReportController@createStep2');
 Route::get('/bank', 'ReportController@bank');

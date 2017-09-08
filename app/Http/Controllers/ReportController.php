@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class ReportController extends Controller
 {
 	private $api = 'Of4FyAcAulVREqGJo4KqTefcUkU2';
+    private $data;
 
 	public function __construct()
 	{
@@ -18,18 +19,18 @@ class ReportController extends Controller
     public function index()
     {
    		$view = view('report.report-firebase');
-   		$data = $this->getUrlContent('http://api.attendance.app/Of4FyAcAulVREqGJo4KqTefcUkU2/report');
-   		$view->list_report = json_decode($data);
+   		$this->data = $this->getUrlContent('http://api.attendance.app/'.$this->api.'/report');
+   		$view->list_report = json_decode($this->data);
 
     	return $view;
     }
 
     public function createStep2(Request $request)
     {
-   		$data = $this->getUrlContent('http://api.attendance.app/Of4FyAcAulVREqGJo4KqTefcUkU2/report');
+   		// $data = $this->getUrlContent('http://api.attendance.app/'.$this->api'/report');
 
     	$view = view('report.create-step-2');
-		$view->list_report = json_decode($data);
+		$view->list_report = json_decode($this->data);
     	$view->report_id = \Input::get('report_id');
     	$view->report_rid = \Input::get('report_rid');
     	$view->name = \Input::get('name');
@@ -47,7 +48,6 @@ class ReportController extends Controller
     	\DB::commit();
 
     	return redirect('bank');
-    	dd($bank);
     }
 
     public function bank()
@@ -56,6 +56,13 @@ class ReportController extends Controller
 		$view->list_bank = Bank::all();
 
 		return $view;
+    }
+
+    public function show($id)
+    {
+        $view = view('report.show');
+        $view->bank = Bank::find($id);
+        return $view;
     }
 
     function getUrlContent($url){

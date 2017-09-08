@@ -8,7 +8,6 @@
                 <div class="panel-heading">
                 	Bank
                 </div>
-                
 	                <table class="table table-bordered table-striped">
 	                	<thead>
 						    <tr>
@@ -21,10 +20,9 @@
 					  	<tbody>
 
 		                @foreach($list_bank as $bank)
-		                
 		                <tr>
 		                	<td class="text-center">
-                                {{$bank->form_number}}
+                                <a href="{{url('bank/'.$bank->id)}}">{{$bank->form_number}}</a>
                             </td>
 		                	<td>
 			                	{{$bank->form_date}}
