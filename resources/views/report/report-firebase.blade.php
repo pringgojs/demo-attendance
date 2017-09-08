@@ -75,6 +75,7 @@
 		                @endif
 					  	</tbody>
 	                </table>
+	                <input type="submit" class="btn btn-default" value="Submit">
                 </div>
                 </form>
             </div>

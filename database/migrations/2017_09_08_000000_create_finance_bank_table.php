@@ -16,10 +16,12 @@ class CreateFinanceBankTable extends Migration
         Schema::create('finance_bank', function (Blueprint $table) {
             $table->increments('id');
             $table->string('form_number');
-            $table->string('form_date');
-            $table->string('bank');
+            $table->integer('raw_number')->unsigned();
+            $table->timestamp('form_date');
+            $table->string('bank_account');
             $table->string('payment_flow');
             $table->string('notes');
+            $table->integer('total');
         });
     }
 

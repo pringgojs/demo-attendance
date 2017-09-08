@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/bank/create-2', 'ReportController@createStep2');
+Route::post('/bank/save', 'ReportController@store');
+Route::post('/bank/create-step-2', 'ReportController@createStep2');
+Route::get('/bank', 'ReportController@bank');
 Route::get('/report', 'ReportController@index');
 
 

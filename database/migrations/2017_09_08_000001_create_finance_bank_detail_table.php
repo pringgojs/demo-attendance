@@ -21,6 +21,7 @@ class CreateFinanceBankDetailTable extends Migration
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             
+            $table->string('account_name');
             $table->string('person_name');
             $table->string('notes');
             $table->decimal('amount', 16, 4);
