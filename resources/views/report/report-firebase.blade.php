@@ -15,6 +15,11 @@
                 </div>
                 <form action="{{url('bank/create-step-2')}}" method="post">
             	{!! csrf_field() !!}
+            	@if(\Input::get('e'))
+            	<div class="alert alert-danger">
+				  <strong>Error!</strong> Pastikan kolom inputan terisi.
+				</div>
+            	@endif
                 <div class="panel-body">
 	                <table class="table table-bordered table-striped">
 	                	<thead>
@@ -50,6 +55,7 @@
 		                <?php $gaji = $report->gaji + $report->tunjangan_pulsa + $report->tunjangan_makan + $report->tunjangan_parkir - $report->denda;?>
 		                <input type="hidden" name="gaji[]" value="{{ $gaji }}">
 		                <input type="hidden" name="name[]" value="{{ $report->name }}">
+		                <input type="hidden" name="report_rid[]" value="{{ $report->id }}">
 		                <tr>
 		                	<td class="text-center">
                                 <input type="checkbox" name="report_id[]" value="{{$report->id}}">
@@ -58,10 +64,10 @@
 		                	<td>{{ $report->date }}</td>
 		                	<td>{{ $report->time_in }}</td>
 		                	<td>{{ $report->time_out }}</td>
-		                	<td>109 menit</td>
+		                	<td>190 Menit</td>
 		                	<td>{{ $report->check_in }}</td>
 		                	<td>{{ $report->check_out }}</td>
-		                	<td>09 menit</td>
+		                	<td>186 menit</td>
 		                	<td>{{ $report->selisih_jam_datang }}</td>
 		                	<td>{{ $report->selisih_jam_pulang }}</td>
 		                	<td>{{ $report->denda }}</td>

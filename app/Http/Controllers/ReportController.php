@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 class ReportController extends Controller
 {
 	private $api = 'Of4FyAcAulVREqGJo4KqTefcUkU2';
-    private $data;
 
 	public function __construct()
 	{
@@ -19,20 +18,19 @@ class ReportController extends Controller
     public function index()
     {
    		$view = view('report.report-firebase');
-   		$this->data = $this->getUrlContent('http://api.attendance.app/'.$this->api.'/report');
-   		$view->list_report = json_decode($this->data);
+   		$data = $this->getUrlContent('http://api.attendance.app/'.$this->api.'/report');
+   		$view->list_report = json_decode($data);
 
     	return $view;
     }
 
     public function createStep2(Request $request)
     {
-   		// $data = $this->getUrlContent('http://api.attendance.app/'.$this->api'/report');
-
     	$view = view('report.create-step-2');
-		$view->list_report = json_decode($this->data);
     	$view->report_id = \Input::get('report_id');
     	$view->report_rid = \Input::get('report_rid');
+        \Log::info($view->report_id);
+        \Log::info($view->report_rid);
     	$view->name = \Input::get('name');
     	$view->gaji = \Input::get('gaji');
 
@@ -41,6 +39,15 @@ class ReportController extends Controller
 
     public function store(Request $request)
     {
+        $validator = \Validator::make($request->all(), [
+            'form_date' => 'required'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect('report?e=1');
+        }
+
+
     	\DB::beginTransaction();
     	
     	$bank = ReportHelper::create($request);
@@ -52,7 +59,7 @@ class ReportController extends Controller
 
     public function bank()
     {
-    	$view = view('report.index');
+        $view = view('report.index');
 		$view->list_bank = Bank::all();
 
 		return $view;

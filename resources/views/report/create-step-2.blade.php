@@ -17,13 +17,13 @@
             	{!! csrf_field() !!}
                 <div class="panel-body">
                 	<div class="form-group">
-                        <label class="col-md-3 control-label">Tanggal Formulir</label>
+                        <label class="col-md-3 control-label">Tanggal Formulir *</label>
                         <div class="col-md-6">
-                            <input type="date" name="form_date" class="form-control">
+                            <input type="date" name="form_date" value="{{old('form_date')}}" class="form-control">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label">Akun Bank </label>
+                        <label class="col-md-3 control-label">Akun Bank *</label>
                         <div class="col-md-6">
                         	<select class="form-control" name="bank_account">
                         		<option value="BNI IDR">BNI IDR</option>
@@ -35,7 +35,7 @@
                 	<div class="form-group">
                         <label class="col-md-3 control-label">Keterangan</label>
                         <div class="col-md-6">
-                            <input type="text" name="notes" class="form-control">
+                            <input type="text" name="notes" value="{{old('notes')}}" class="form-control">
                         </div>
                     </div>
 

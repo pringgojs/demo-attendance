@@ -20,7 +20,7 @@ class CreateFinanceBankTable extends Migration
             $table->timestamp('form_date');
             $table->string('bank_account');
             $table->string('payment_flow');
-            $table->string('notes');
+            $table->string('notes')->nullable();
             $table->integer('total');
         });
     }

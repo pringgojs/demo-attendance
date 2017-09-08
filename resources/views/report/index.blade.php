@@ -11,7 +11,7 @@
 	                <table class="table table-bordered table-striped">
 	                	<thead>
 						    <tr>
-						      <th>Kode</th>
+						      <th>Nomor Formulir</th>
 						      <th>Tanggal</th>
 						      <th>Akun Bank</th>
 						      <th>Jumlah</th>
@@ -21,7 +21,7 @@
 
 		                @foreach($list_bank as $bank)
 		                <tr>
-		                	<td class="text-center">
+		                	<td>
                                 <a href="{{url('bank/'.$bank->id)}}">{{$bank->form_number}}</a>
                             </td>
 		                	<td>

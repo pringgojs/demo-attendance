@@ -2,8 +2,8 @@
 
 namespace App\Helpers;
 
-use App\BankDetail;
 use App\Models\Bank;
+use App\Models\BankDetail;
 
 class ReportHelper
 {
@@ -37,9 +37,9 @@ class ReportHelper
 	{
 		$date = explode('-', $date);
 		$raw_number = 1;
-		$bank = Bank::max('raw_number');
-		if ($bank) {
-			$raw_number = $bank->raw_number + 1;
+		$last_number = Bank::max('raw_number');
+		if ($last_number) {
+			$raw_number = $last_number + 1;
 		}
 		$number = 'BANK-KELUAR/'.$raw_number.'/'.$date[1].'/'.$date[2];
 

@@ -23,7 +23,7 @@ class CreateFinanceBankDetailTable extends Migration
             
             $table->string('account_name');
             $table->string('person_name');
-            $table->string('notes');
+            $table->string('notes')->nullable();
             $table->decimal('amount', 16, 4);
         });
     }

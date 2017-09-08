@@ -18,6 +18,12 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label class="col-md-3 control-label">Nomor Formulir</label>
+                        <div class="col-md-6">
+                            {{ $bank->form_number }}
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label class="col-md-3 control-label">Akun Bank </label>
                         <div class="col-md-6">
                         	{{ $bank->bank_account}}
@@ -42,7 +48,7 @@
 						      <th>Akun</th>
 						      <th>Nama</th>
 						      <th>Keterangan</th>
-						      <th>Jumlah</th>
+						      <th class="text-right">Jumlah</th>
 					      	</tr>
 					  	</thead>
 					  	<tbody>
