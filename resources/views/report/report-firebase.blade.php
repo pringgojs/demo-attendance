@@ -52,28 +52,28 @@
 			  			<?php $i = 1; ?>
 			  			@if($list_report)
 		                @foreach($list_report as $key => $report)
-		                <?php $gaji = $report->gaji + $report->tunjangan_pulsa + $report->tunjangan_makan + $report->tunjangan_parkir - $report->denda;?>
+		                <?php $gaji = $report['gaji'] + $report['tunjangan_pulsa'] + $report['tunjangan_makan'] + $report['tunjangan_parkir'] - $report['denda'];?>
 		                <input type="hidden" name="gaji[]" value="{{ $gaji }}">
-		                <input type="hidden" name="name[]" value="{{ $report->name }}">
-		                <input type="hidden" name="report_rid[]" value="{{ $report->id }}">
+		                <input type="hidden" name="name[]" value="{{ $report['name'] }}">
+		                <input type="hidden" name="report_rid[]" value="{{ $report['id'] }}">
 		                <tr>
 		                	<td class="text-center">
-                                <input type="checkbox" name="report_id[]" value="{{$report->id}}">
+                                <input type="checkbox" name="report_id[]" value="{{$report['id']}}">
                             </td>
-		                	<td>{{ $report->name }}</td>
-		                	<td>{{ $report->date }}</td>
-		                	<td>{{ $report->time_in }}</td>
-		                	<td>{{ $report->time_out }}</td>
-		                	<td>190 Menit</td>
-		                	<td>{{ $report->check_in }}</td>
-		                	<td>{{ $report->check_out }}</td>
+		                	<td>{{ $report['name'] }}</td>
+		                	<td>{{ $report['date']}}</td>
+		                	<td>{{ $report['time_in'] }}</td>
+		                	<td>{{ $report['time_out'] }}</td>
+		                	<td>180 Menit</td>
+		                	<td>{{ $report['check_in']}}</td>
+		                	<td>{{ $report['check_out']}}</td>
 		                	<td>186 menit</td>
-		                	<td>{{ $report->selisih_jam_datang }}</td>
-		                	<td>{{ $report->selisih_jam_pulang }}</td>
-		                	<td>{{ $report->denda }}</td>
-		                	<td>{{ $report->tunjangan_parkir }}</td>
-		                	<td>{{ $report->tunjangan_makan }}</td>
-		                	<td>{{ $report->tunjangan_pulsa }}</td>
+		                	<td>{{ $report['selisih_jam_datang']}}</td>
+		                	<td>{{ $report['selisih_jam_pulang']}}</td>
+		                	<td>{{ $report['denda']}}</td>
+		                	<td>{{ $report['tunjangan_parkir']}}</td>
+		                	<td>{{ $report['tunjangan_makan']}}</td>
+		                	<td>{{ $report['tunjangan_pulsa']}}</td>
 		                	<td>{{ $gaji }}</td>
 		                </tr>
 		                <?php $i++;?>

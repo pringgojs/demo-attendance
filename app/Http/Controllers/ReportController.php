@@ -18,8 +18,9 @@ class ReportController extends Controller
     public function index()
     {
    		$view = view('report.report-firebase');
-   		$data = $this->getUrlContent('http://api.attendance.app/'.$this->api.'/report');
-   		$view->list_report = json_decode($data);
+   		$data = ReportHelper::getData();
+   		$view->list_report = $data;
+
 
     	return $view;
     }

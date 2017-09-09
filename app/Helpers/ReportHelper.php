@@ -7,6 +7,59 @@ use App\Models\BankDetail;
 
 class ReportHelper
 {
+	public static function getData()
+	{
+		$data = array(
+			['name' => 'Yuliati',
+			'id' => '1',
+			'date' => '08-09-2017',
+			'time_in' => '08:00',
+			'time_out' => '16:00',
+			'selisih' => '2 Menit',
+			'check_in' => '07:45',
+			'check_out' => '16:12',
+			'selisih_jam_pulang' => '12 Menit',
+			'selisih_jam_datang' => '15 Menit',
+			'denda' => '0',
+			'tunjangan_parkir' => '5000',
+			'tunjangan_makan' => '5000',
+			'tunjangan_pulsa' => '5000',
+			'gaji' => '100000'],
+			['name' => 'Dewi',
+			'id' => '2',
+			'date' => '08-09-2017',
+			'time_in' => '08:00',
+			'time_out' => '16:00',
+			'selisih' => '0 Menit',
+			'check_in' => '07:55',
+			'check_out' => '16:01',
+			'selisih_jam_pulang' => '01 Menit',
+			'selisih_jam_datang' => '55 Menit',
+			'denda' => '0',
+			'tunjangan_parkir' => '5000',
+			'tunjangan_makan' => '5000',
+			'tunjangan_pulsa' => '5000',
+			'gaji' => '100000'],
+			['name' => 'Dangga',
+			'id' => '3',
+			'date' => '08-09-2017',
+			'time_in' => '08:00',
+			'time_out' => '16:00',
+			'selisih' => '0 Menit',
+			'check_in' => '08:10',
+			'check_out' => '16:00',
+			'selisih_jam_pulang' => '00 Menit',
+			'selisih_jam_datang' => '00 Menit',
+			'denda' => '2000',
+			'tunjangan_parkir' => '5000',
+			'tunjangan_makan' => '5000',
+			'tunjangan_pulsa' => '5000',
+			'gaji' => '100000'],
+		);		
+
+		return $data;	
+	}
+
 	public static function create($request)
 	{
 		$bank = new Bank;
