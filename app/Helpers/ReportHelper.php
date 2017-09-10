@@ -34,7 +34,7 @@ class ReportHelper
 			'check_in' => '07:55',
 			'check_out' => '16:01',
 			'selisih_jam_pulang' => '01 Menit',
-			'selisih_jam_datang' => '55 Menit',
+			'selisih_jam_datang' => '05 Menit',
 			'denda' => '0',
 			'tunjangan_parkir' => '5000',
 			'tunjangan_makan' => '5000',
